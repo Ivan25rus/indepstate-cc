@@ -21,3 +21,7 @@ jobs:
         run: node --test test/candleRendererCore.test.js test/candleRendererAddon.test.js
       - name: Python unit tests
         run: python -m unittest discover -s test/candle-renderer-python -p 'test_*.py'
+      - name: Addon indicator chart policy
+        env:
+          CANDLE_INDICATOR_SOURCE: extensions/candleLevelRenderer/mt5/ISCC Addon Levels.mq5
+        run: python -m unittest discover -s test/candle-renderer-python -p 'test_chart_policy.py'
